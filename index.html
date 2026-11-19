@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Artwork di Novembre · F.lli Petrillo &amp; C. srl</title>
+<title>Pubblicità di Novembre · F.lli Petrillo &amp; C. srl</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0085FF">
 <link rel="icon" type="image/png" href="icone/favicon-32.png">
@@ -161,12 +161,12 @@
 <header>
   <div class="head-in">
     <div class="logo-box"><div class="logo" role="img" aria-label="F.lli Petrillo &amp; C. srl"></div><span class="luccichio" aria-hidden="true" onanimationend="this.remove()"></span><span class="tricolore" aria-hidden="true"></span></div>
-    <h1>Artwork di Novembre</h1>
+    <h1>Pubblicità di Novembre</h1>
   </div>
 </header>
 
 <main>
-  <p class="nota" id="nota">Tocca un'artwork per vedere gli articoli che trattiamo.</p>
+  <p class="nota" id="nota">Tocca una pubblicità per vedere gli articoli che trattiamo.</p>
   <div class="elenco" id="elenco"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
 </main>
 
@@ -263,7 +263,7 @@
     // le anteprime si scaricano e si preparano PRIMA di mostrarle: scorrendo non resta niente da caricare
     const pronte = d.artwork.map(a => { const im = new Image(); im.src = a.anteprima; return (im.decode ? im.decode() : Promise.resolve()).catch(() => {}); });
     return Promise.race([Promise.all(pronte), new Promise(ok => setTimeout(ok, 1500))]).then(() => mostraElenco(d));
-  }).catch(() => { $('elenco').innerHTML = '<div class="errore">Impossibile caricare le artwork. Controlla la connessione e riprova.</div>'; });
+  }).catch(() => { $('elenco').innerHTML = '<div class="errore">Impossibile caricare le pubblicità. Controlla la connessione e riprova.</div>'; });
 
   function mostraElenco(d){
     $('elenco').innerHTML = d.artwork.map((a, i) => {
